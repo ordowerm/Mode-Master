@@ -4,6 +4,10 @@ html{
   user-select: none;
 }
 
+body {
+  font-size: 1em;
+}
+
 #top-module{
   margin: auto;
   padding: 0.5em;
@@ -18,9 +22,10 @@ html{
 }
 
 #chord-module{
+  font-size: 0.8em;
   border-bottom-right-radius: inherit;
   border-bottom-left-radius: inherit;
-  visibility: collapse; /* Remove later. This is hidden just for demo purposes */
+  /*visibility: collapse; /* Remove later. This is hidden just for demo purposes */
 }
 
 #bottom-module {
@@ -31,7 +36,11 @@ html{
 }
 
 #modename {
-  font-size: 2em;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+#tagline{
+  font-size: 0.6em;
 }
 
 /*
@@ -53,6 +62,7 @@ textPath {
 
 #notes-div {
   font-size: 1.5em;
+  font-weight: bold;
 }
 
 .modetext {
