@@ -1,0 +1,31 @@
+{
+    "require": {
+        "monolog/monolog": "1.0.*"
+    },
+    "repositories": [
+    {
+        "type": "path",
+        "url": "/Scripts/constants.js"
+    },
+    {
+        "type": "path",
+        "url": "/Scripts/animator.js"
+    },
+    {
+        "type": "path",
+        "url": "/Scripts/textbuilder.js"
+    },
+    {
+        "type": "path",
+        "url": "/Scripts/drawmodewheel.js"
+    },
+    {
+        "type": "path",
+        "url": "/Scripts/buildpage.js"
+    },
+    {
+        "type": "path",
+        "url": "/Styles/stylesheet.css"
+    }
+  ]
+}
