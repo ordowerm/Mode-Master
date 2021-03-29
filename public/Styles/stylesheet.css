@@ -1,0 +1,116 @@
+html{
+  width:100vw;
+  height: 100vh;
+  user-select: none;
+}
+
+body {
+  font-size: 1em;
+}
+
+#top-module{
+  margin: auto;
+  padding: 0.5em;
+  text-align: center;
+  border-radius: 1em;
+  max-height: 40vh;
+}
+
+#mode-module{
+  border-top-right-radius: inherit;
+  border-top-left-radius: inherit;
+}
+
+#chord-module{
+  font-size: 0.8em;
+  border-bottom-right-radius: inherit;
+  border-bottom-left-radius: inherit;
+  /*visibility: collapse; /* Remove later. This is hidden just for demo purposes */
+}
+
+#bottom-module {
+  margin: auto;
+  text-align: center;
+  max-height: 60vh;
+
+}
+
+#modename {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+#tagline{
+  font-size: 0.6em;
+}
+
+/*
+Since the wheel's viewbox should be a perfect square,
+limiting the width to a percentage of the view height will also fix
+the height of the SVG
+*/
+#wheel{
+  max-width:60vh;
+}
+
+textPath {
+  text-align: center;
+  text-anchor:middle;
+  startOffset:50%;
+  stroke-width:0;
+  fill:black;
+}
+
+#notes-div {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.modetext {
+  font-size: 0.31em;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: bolder;
+  stroke-width:0;
+  fill:black;
+  text-anchor:middle;
+  dominant-baseline:middle;
+  text-align: center;
+}
+
+.chordtext {
+  font-size: 0.32em;
+  font-family: monospace;
+  font-weight: light;
+  stroke-width:0;
+  fill:black;
+  text-anchor:middle;
+  dominant-baseline:middle;
+  text-align: center;
+}
+
+.intervaltext{
+  font-size: 0.34em;
+  text-anchor:middle;
+  dominant-baseline:middle;
+  text-align: center;
+  font-family: 'Noto Sans', sans-serif;
+  stroke-width:0;
+  fill:white;
+}
+
+.chord-module-title {
+  text-align: right;
+}
+
+.div-selected {
+  stroke-width:2px;
+  stroke: white;
+}
+
+.div-unselected {
+  stroke-width:1px;
+  stroke: black;
+}
+
+roman {
+  font-family: serif;
+}
