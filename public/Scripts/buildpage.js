@@ -36,9 +36,9 @@ function SetChordText(){
   document.getElementById("scale-degree").innerHTML = GetAccidental(modeSelected,(7+chordSelected-modeSelected)%7)+((7+chordSelected-modeSelected)%7+1).toString();
   document.getElementById("seventh-chord").innerHTML = GetAccidental(modeSelected,(7+chordSelected-modeSelected)%7)+GetRoman(modeSelected,chordSelected)+SeventhChords[chordSelected];
   document.getElementById("chordscale").innerHTML = Mode[chordSelected];
-  document.getElementById("tension-ninth").innerHTML = Tensions[chordSelected][0];
-  document.getElementById("tension-eleventh").innerHTML = Tensions[chordSelected][1];
-  document.getElementById("tension-thirteenth").innerHTML = Tensions[chordSelected][2];
+  document.getElementById("tension-ninth").innerHTML = "<pre>"+Tensions[chordSelected][0] + "    " +Tensions[chordSelected][1]+"    "+Tensions[chordSelected][2] +"</pre>";
+  //document.getElementById("tension-eleventh").innerHTML = Tensions[chordSelected][1];
+  //document.getElementById("tension-thirteenth").innerHTML = Tensions[chordSelected][2];
 
   //unclicks chords
   //This loop updates chord wheel text, unclicks modes
