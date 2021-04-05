@@ -211,13 +211,21 @@ function MakeGroup(data, num, groupname,color){
   return groupstring;
 }
 
+
+/*
+Adds text for the <title> tag of the SVG. This serves as tooltip/alt-text for accessibility.
+*/
+function AddAltText() {
+  return "<desc id=\"wheel-description\">A wheel-shaped diagram displaying the diatonic modes, as well as the 7th chords at each scale degree.</desc>";
+}
+
 /*
 function that adds SVG to the div corresponding to the id in the function's argument
 */
 function AddPaths(id){
   var i;
   var data = new DrawData();
-  var addstring = "";
+  var addstring = AddAltText();
   for (i=0;i<data.divnumber;i++){
     addstring+=MakeGroup(data,i,Mode[i]+"-group",PrimaryColors[i]);
   }

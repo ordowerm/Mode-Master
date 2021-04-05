@@ -2,29 +2,49 @@ html {
   width:100vw;
   height: 100vh;
   user-select: none;
+  font-size: 100%;
+}
+
+#top-module{
+  min-height: 20vh;
+  margin: auto;
+  padding: 0.5rem;
+  text-align: center;
+  border-radius: 1rem;
+  max-height: 40vh;
+}
+
+#help-module{
+  max-width: 80%;
+  min-height: 20vh;
+  margin: auto;
+  padding: 3rem;
+  text-align: center;
+  border-radius: 1rem;
+  color: white;
+}
+
+p{
+  font-size: 1.4em;
 }
 
 @media (max-width: 575.98px) {
   #top-module{
-    font-size: 18px;
-    margin: auto;
-    padding: 0.5rem;
-    text-align: center;
-    border-radius: 1rem;
-    max-height: 40vh;
+    font-size: 1.3rem;
+
   }
 
   #bottom-module {
     margin: auto;
     text-align: center;
     max-height: 60vh;
-    font-size:16px;
+    font-size:1rem;
   }
 }
 
 @media (min-width:575.99px) and (max-width: 767.98px) {
   #top-module{
-    font-size: 14px;
+    font-size: 1rem;
     margin: auto;
     padding: 0.5rem;
     text-align: center;
@@ -36,13 +56,13 @@ html {
     margin: auto;
     text-align: center;
     max-height: 60vh;
-    font-size:16px;
+    font-size:1rem;
   }
 }
 
 @media (min-width:767.99px) and (max-width: 991.98px) {
   #top-module{
-    font-size: 16px;
+    font-size: 1rem;
     margin: auto;
     padding: 0.5rem;
     text-align: center;
@@ -53,13 +73,13 @@ html {
     margin: auto;
     text-align: center;
     max-height: 60vh;
-    font-size:16px;
+    font-size:1rem;
   }
 }
 
 @media (min-width: 991.99px) and (max-width: 1199.98px) {
   #top-module{
-    font-size: 16px;
+    font-size: 1rem;
     margin: auto;
     padding: 0.5rem;
     text-align: center;
@@ -70,13 +90,13 @@ html {
     margin: auto;
     text-align: center;
     max-height: 60vh;
-    font-size:14px;
+    font-size:1rem;
   }
 }
 
 @media (min-width:1199.99px) and (max-width: 1399.98px) {
   #top-module{
-    font-size: 14px;
+    font-size: 1.2rem;
     margin: auto;
     padding: 0.5rem;
     text-align: center;
@@ -87,13 +107,13 @@ html {
     margin: auto;
     text-align: center;
     max-height: 60vh;
-    font-size:16px;
+    font-size:1rem;
   }
 }
 
 @media (min-width: 1399.99px) {
   #top-module{
-    font-size: 20px;
+    font-size: 1.2rem;
     margin: auto;
     padding: 0.5rem;
     text-align: center;
@@ -104,7 +124,7 @@ html {
     margin: auto;
     text-align: center;
     max-height: 60vh;
-    font-size:16px;
+    font-size:1rem;
   }
 }
 
