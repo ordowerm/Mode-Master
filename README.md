@@ -6,7 +6,7 @@ Simple Node.js / Express webapp to help guitarists learn the diatonic modes.
 
 This project was requested by a guitar-teacher friend named Todd Hoskin, who wanted to transition from using paper charts to using something that his students could reference on their smartphones.
 
-I designed the UI myself, including a hand-coded SVG that the app generates programmatically while loading the page.
+I designed the UI myself, including a partially-hand-coded SVG image that the app generates programmatically while loading the page.
 
 UI/UX Considerations:
 - Focus on mobile
