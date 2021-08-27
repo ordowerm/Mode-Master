@@ -12,10 +12,10 @@ var modeSelected = 0;
 function SetModeText(){
   document.getElementById("modename").innerHTML=Mode[modeSelected]; //update mode name in top module
   document.getElementById("tagline").innerHTML=Taglines[modeSelected]; //update tagline
-  var i;
+  let i=0;
   for (i=0;i<7;i++){
-    var tag = "note-number-"+(i+1).toString();
-    var notename = GetAccidental(modeSelected,i)+(i+1).toString();
+    const tag = "note-number-"+(i+1).toString();
+    const notename = GetAccidental(modeSelected,i)+(i+1).toString();
     document.getElementById(tag).innerHTML=notename;
   } //iterate through notes
 
@@ -42,7 +42,7 @@ function SetChordText(){
 
   //unclicks chords
   //This loop updates chord wheel text, unclicks modes
-  var i;
+  let i=0;
   for (i=0; i<7;i++){
     document.getElementById(Mode[i]+"-group-inner-path").setAttribute("class","div-unselected");
   }
@@ -75,12 +75,12 @@ function SelectChord(event){
 
 //adds click listener to each mode group
 function AddModeListeners(){
-  var i;
+  let i=0;
   for (i=0;i<7;i++){
-    var number = i;
+    const number = i;
 
     //add click listener to mode path
-    var id ="#"+Mode[number]+"-group-outer-path";
+    let id ="#"+Mode[number]+"-group-outer-path";
     $(id).click({
       param: number
     },SelectMode);
@@ -96,9 +96,9 @@ function AddModeListeners(){
 
 //adds click listener to each chord group
 function AddChordListeners(){
-  var i;
+  let i=0;
   for (i=0;i<7;i++){
-    var number = i;
+    const number = i;
 
     //add click listener to mode path
     var id ="#"+Mode[number]+"-group-inner-path";

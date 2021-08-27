@@ -25,16 +25,16 @@ Input id attribute and color attributes, + DrawData object.
 */
 function DrawInnerPath(id,color,data){
     //begin writing path. Move drawing cursor to bottom-left corner of SVG canvas
-    var returnme = "<path class=\""+data.classname+"\" id=\""+id+"\" fill=\""+color+"\" d=\"M 0 ";
+    let returnme = "<path class=\""+data.classname+"\" id=\""+id+"\" fill=\""+color+"\" d=\"M 0 ";
     returnme += data.height.toString() + " ";
 
     //draw segment denoting start point of inner arc
-    var val1 = data.width/2.0*data.inradius;
+    let val1 = data.width/2.0*data.inradius;
     returnme += "l " + val1.toString() + " 0";
 
-    var angle = (2*Math.PI)/data.divnumber;
+    let angle = (2*Math.PI)/data.divnumber;
     val1 = data.width/2.0*data.inradius*Math.cos(angle);
-    var val2 = data.height-data.width/2.0*data.inradius*Math.sin(angle);
+    let val2 = data.height-data.width/2.0*data.inradius*Math.sin(angle);
     returnme += "A " + data.width/2.0*data.inradius.toString() + " " + data.width/2.0*data.inradius + " 0 0 0" + val1.toString() + " " + val2.toString();
 
     returnme += " Z\" />\"";
@@ -45,12 +45,12 @@ function DrawInnerPath(id,color,data){
 Builds an outer section of the SVG.
 */
 function DrawOuterPath(id,color,data){
-  var returnme = "<path class=\""+data.classname+"\" id=\""+id+"\" fill=\""+color+"\" d=\"M ";
-  var val1 = data.width/2.0*data.outradius_near;
+  let returnme = "<path class=\""+data.classname+"\" id=\""+id+"\" fill=\""+color+"\" d=\"M ";
+  let val1 = data.width/2.0*data.outradius_near;
   returnme += val1.toString() + " " + data.height.toString() + " ";
-  var angle = (2*Math.PI)/data.divnumber;
+  let angle = (2*Math.PI)/data.divnumber;
   val1 = data.width/2.0*data.outradius_near*Math.cos(angle);
-  var val2 = data.height-data.width/2.0*data.outradius_near*Math.sin(angle);
+  let val2 = data.height-data.width/2.0*data.outradius_near*Math.sin(angle);
   returnme += "A " + data.width/2.0*data.outradius_near.toString() + " " + data.width/2.0*data.outradius_near.toString() + " 0 0 0" + val1.toString() + " " + val2.toString();
   val1 = data.width/2.0*data.outradius_far*Math.cos(angle);
   val2 = data.height-data.width/2.0*data.outradius_far*Math.sin(angle);
@@ -74,19 +74,19 @@ format for text id attribute:
 mode + '-wheel-text'
 */
 function DrawModeTextPath(id,text,data){
-  var newid = id+"-textpath";
-  var path = "<path class=\""+data.classname+"\" id=\""+newid+"\" stroke=\"none\" fill=\"none\" d=\"M ";
+  let newid = id+"-textpath";
+  let path = "<path class=\""+data.classname+"\" id=\""+newid+"\" stroke=\"none\" fill=\"none\" d=\"M ";
 
   //move to starting point of arc
-  var angle = (2*Math.PI)/data.divnumber;
-  var val1 = data.width/2.0*data.textradius*Math.cos(angle);
-  var val2 = data.height-data.width/2.0*data.textradius*Math.sin(angle);
+  let angle = (2*Math.PI)/data.divnumber;
+  let val1 = data.width/2.0*data.textradius*Math.cos(angle);
+  let val2 = data.height-data.width/2.0*data.textradius*Math.sin(angle);
   path += val1.toString() + " " + val2.toString() + " ";
 
   val1 = data.width/2.0*data.textradius;
 
   path += "A " + data.width/2.0*data.textradius.toString() + " " + data.width/2.0*data.textradius.toString() + " 0 0 1" + val1.toString() + " " + data.height + " \" />";
-  var textpath= "<text class=\"modetext\"  id=\""+id +"-wheel-text\" ><textPath href=\"#"+newid+"\" text-anchor=\"middle\" startOffset=\"50%\">"+text.toUpperCase()+"</textPath></text>";
+  let textpath= "<text class=\"modetext\"  id=\""+id +"-wheel-text\" ><textPath href=\"#"+newid+"\" text-anchor=\"middle\" startOffset=\"50%\">"+text.toUpperCase()+"</textPath></text>";
   return path+textpath;
 }
 
@@ -105,6 +105,8 @@ tag for roman numeral:
 class for other textpath:
 'chordtext-wheel'
 */
+
+/*
 function DrawChordTextPathOld(num,data){
   var pathid = "chord-textpath-"+num.toString();
   var path = "<path id=\"chord-textpath-"+num.toString()+"\" stroke=\"none\" fill=\"none\" "; //begin textpath
@@ -136,7 +138,7 @@ function DrawChordTextPathOld(num,data){
   }
 
 }
-
+*/
 
 /*
 Function for drawing the boxes containing each chord and roman numeral.
@@ -149,11 +151,11 @@ format for ID attribute of whole textbox:
 'chord-text'+number
 */
 function DrawChordTextPath(data){
-  var text="";
-  var n = data.divnumber;
-  var angle = 2.0*Math.PI/n;
-  var r = data.chordradius*data.width/2.0;
-  var i;
+  let text="";
+  let n = data.divnumber;
+  let angle = 2.0*Math.PI/n;
+  let r = data.chordradius*data.width/2.0;
+  let i=0;
   for(i=0;i<n;i++){
     text+="<text class=\"chordtext\" id=\"chord-text-"+i.toString()+"\" ";
     text+="x=\""+(data.width/2.0-r*Math.cos(7.0*angle/4.0+angle*(i))).toString()+"\" ";
@@ -169,11 +171,11 @@ Draws intervals
 */
 
 function DrawIntervals(data){
-  var n = data.divnumber;
-  var angle = 2.0*Math.PI/n;
-  var r = data.stepradius*data.width/2.0;
-  var text = "";
-  var i = 0;
+  let n = data.divnumber;
+  let angle = 2.0*Math.PI/n;
+  let r = data.stepradius*data.width/2.0;
+  let text = "";
+  let i = 0;
   for(i=0;i<n;i++){
     text+="<text class=\"intervaltext\" ";
     text+="x=\""+(data.width/2.0-r*Math.cos(angle/4.0+angle*(i+2))).toString()+"\" ";
@@ -188,11 +190,11 @@ function DrawIntervals(data){
 creates a group for each set of paths, then transforms them appropriately.
 */
 function MakeGroup(data, num, groupname,color){
-  var n = data.divnumber;
-  var offset = 360/(2.0*n);//(Math.PI/2.0-Math.PI/n)*360/(2*Math.PI); //offset angle to center transformation group
+  let n = data.divnumber;
+  const offset = 360/(2.0*n);//(Math.PI/2.0-Math.PI/n)*360/(2*Math.PI); //offset angle to center transformation group
 
-  var groupstring = "<g id=\""+groupname+"\" "; //begin group tag
-  var transformstring = "transform = \""
+  let groupstring = "<g id=\""+groupname+"\" "; //begin group tag
+  let transformstring = "transform = \""
   transformstring +="translate("+(data.width/2.0).toString()+","+(-data.height/2.0).toString()+") ";
   transformstring+= "rotate("+((offset-90.0)+num*offset*2.0).toString()+" "+"0" + " "+(data.height).toString()+")"; //translate group to center
   transformstring+="\" ";
@@ -200,7 +202,7 @@ function MakeGroup(data, num, groupname,color){
   groupstring+=">"; //close tag
 
   //add paths to group
-  var paths = DrawInnerPath(groupname+"-inner-path",color,data);
+  let paths = DrawInnerPath(groupname+"-inner-path",color,data);
   paths += DrawOuterPath(groupname+"-outer-path",color,data);
   paths += DrawModeTextPath(groupname,Mode[num],data);
   groupstring+=paths;
@@ -223,9 +225,9 @@ function AddAltText() {
 function that adds SVG to the div corresponding to the id in the function's argument
 */
 function AddPaths(id){
-  var i;
-  var data = new DrawData();
-  var addstring = AddAltText();
+  let i=0;
+  let data = new DrawData();
+  let addstring = AddAltText();
   for (i=0;i<data.divnumber;i++){
     addstring+=MakeGroup(data,i,Mode[i]+"-group",PrimaryColors[i]);
   }
